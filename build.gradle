@@ -11,6 +11,7 @@
 apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'war'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
