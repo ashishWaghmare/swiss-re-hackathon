@@ -1,1 +1,0 @@
-# swiss-re-hackathon
