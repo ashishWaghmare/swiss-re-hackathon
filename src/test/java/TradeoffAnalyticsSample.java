@@ -1,5 +1,3 @@
-package in.co.waghmare;
-
 import com.ibm.watson.developer_cloud.tradeoff_analytics.v1.TradeoffAnalytics;
 import com.ibm.watson.developer_cloud.tradeoff_analytics.v1.model.Dilemma;
 import com.ibm.watson.developer_cloud.tradeoff_analytics.v1.model.Option;
