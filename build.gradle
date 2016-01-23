@@ -37,28 +37,14 @@ dependencies {
     // We use the latest groovy 2.x version for building this library
     compile 'org.codehaus.groovy:groovy-all:2.3.7'
     compile 'com.ibm.watson.developer_cloud:java-sdk:2.6.0'
+    compile 'org.springframework.boot:spring-boot-starter-web'
 
-    compile('com.vaadin:vaadin-spring-boot-starter:1.0.0')
 
     // We use the awesome Spock testing and specification framework
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
     testCompile 'junit:junit:4.11'
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "com.vaadin:vaadin-bom:7.5.5"
-    }
-}
-
-
-eclipse {
-    classpath {
-        containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-        containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
-    }
 }
 
 
