@@ -4,4 +4,10 @@
 swiss-re-hackathon.iml
 swiss-re-hackathon.ipr
 swiss-re-hackathon.iws
+node_modules
+dist
+bower_components
+.tmp
+.publish/
+static
 
