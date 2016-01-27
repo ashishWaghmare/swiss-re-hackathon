@@ -39,6 +39,7 @@
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  
   <!-- endbuild -->
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
@@ -113,20 +114,17 @@
             <section data-route="home">
               <paper-material elevation="1">
                 <my-greeting></my-greeting>
-
                 <p class="paper-font-subhead">You might be looking at:</p>
                 <my-list></my-list>
-
-                <p class="paper-font-body2">Looking to buy insurance using our service <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
               </paper-material>
               <paper-material elevation="1">
-                <p class="paper-font-body2">We help both private companies and Individual to get right insurance for their needs.</p>
-              </paper-material>
 
+              </paper-material>
             </section>
 
             <section data-route="users">
               <paper-material elevation="1">
+                <product-list></product-list>
                 <h2 class="page-title">Products</h2>
                 <p>This is the products section</p>
                 <a href$="{{baseUrl}}users/LIC">LIC</a><br>
@@ -139,6 +137,25 @@
                 <a href$="{{baseUrl}}users/Tata">Tata AIA </a><br>
 
               </paper-material>
+             
+              <div class="horizontal-section-container">
+                <template is="dom-bind" id="conatiner">
+                  <iron-ajax auto url="https://www.googleapis.com/youtube/v3/search"
+                      params='{"part":"snippet", "q":"polymer", "key": "AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI", "type": "video"}' handle-as="json" last-response="{{ajaxResponse}}">
+                </iron-ajax>
+                 <template is="dom-repeat" items="[[ajaxResponse.items]]">
+           <paper-material elevation="1">
+            <h2><a href="[[url(item.id.videoId)]]" target="_blank">[[item.snippet.title]]</a></h2>
+            <iron-image src="[[item.snippet.thumbnails.high.url]]" width="256" height="256" sizing="cover" preload fade></iron-image>
+            <p>[[item.snippet.description]]</p>
+            </paper-material>
+          </div>
+                </template>
+                </template>
+                </div>
+              
+              
+              
             </section>
 
             <section data-route="user-info">
