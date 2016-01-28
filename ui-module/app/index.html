@@ -103,6 +103,7 @@
           <!-- Application sub title -->
           <div class="bottom bottom-container center horizontal layout">
             <div class="bottom-title paper-font-subhead">We help you get insured faster</div>
+            <google-signin brand="google" client-id="1054047045356-j8pgqgls9vdef3rl09hapoicumbte0bo.apps.googleusercontent.com"></google-signin>
           </div>
 
         </paper-toolbar>
@@ -144,19 +145,15 @@
                       params='{"part":"snippet", "q":"polymer", "key": "AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI", "type": "video"}' handle-as="json" last-response="{{ajaxResponse}}">
                 </iron-ajax>
                  <template is="dom-repeat" items="[[ajaxResponse.items]]">
-           <paper-material elevation="1">
-            <h2><a href="[[url(item.id.videoId)]]" target="_blank">[[item.snippet.title]]</a></h2>
-            <iron-image src="[[item.snippet.thumbnails.high.url]]" width="256" height="256" sizing="cover" preload fade></iron-image>
-            <p>[[item.snippet.description]]</p>
-            </paper-material>
-          </div>
-                </template>
+                 <paper-material elevation="1">
+                  <h2><a href="[[url(item.id.videoId)]]" target="_blank">[[item.snippet.title]]</a></h2>
+                  <iron-image src="[[item.snippet.thumbnails.high.url]]" width="256" height="256" sizing="cover" preload fade></iron-image>
+                  <p>[[item.snippet.description]]</p>
+                  </paper-material>
+                  </template>
                 </template>
                 </div>
-              
-              
-              
-            </section>
+              </section>
 
             <section data-route="user-info">
               <paper-material elevation="1">

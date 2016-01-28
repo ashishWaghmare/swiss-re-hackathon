@@ -14,12 +14,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
-  app.url = function (videoId) {
-      return 'https://www.youtube.com/watch?v=' + videoId;
-    };
 
   // Sets app default base URL
   app.baseUrl = '/';
+
   if (window.location.port === '') {  // if production
     // Uncomment app.baseURL below and
     // set app.baseURL to '/your-pathname/' if running from folder in production
@@ -79,6 +77,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   app.closeDrawer = function() {
     app.$.paperDrawerPanel.closeDrawer();
+  };
+
+  var conatiner = document.querySelector('#conatiner');
+  conatiner.url = function(videoId) {
+    return 'https://www.youtube.com/watch?v=' + videoId;
   };
 
 })(document);
